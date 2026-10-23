@@ -24,7 +24,7 @@ public class Docente {
     @OneToMany(mappedBy = "docente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Asignacion> asignaciones = new ArrayList<>();
 
-    public Docente() { }  // JPA necesita un constructor vacío
+    public Docente() { }
 
     public Docente(String nombre, String email, String especialidad) {
         this.nombre = nombre;
@@ -32,7 +32,6 @@ public class Docente {
         this.especialidad = especialidad;
     }
 
-    /** Suma de horas de todas las asignaturas que dicta. */
     public int getCargaHorariaTotal() {
         return asignaciones.stream().mapToInt(Asignacion::getHoras).sum();
     }

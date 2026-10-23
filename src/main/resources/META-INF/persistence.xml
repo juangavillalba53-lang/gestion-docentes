@@ -7,7 +7,6 @@
     <persistence-unit name="docentesPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <!-- Acá vamos a ir agregando las entidades -->
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
         <properties>
@@ -17,7 +16,6 @@
             <property name="jakarta.persistence.jdbc.user" value="docentes_app"/>
             <property name="jakarta.persistence.jdbc.password" value="ipesmi1234"/>
 
-            <!-- Hibernate crea/actualiza las tablas a partir de las entidades -->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>

@@ -29,7 +29,6 @@ public class Asignatura {
         this.horasSemanales = horasSemanales;
     }
 
-    /** Horas ya cubiertas por docentes asignados. */
     public int getHorasAsignadas() {
         return asignaciones.stream().mapToInt(Asignacion::getHoras).sum();
     }
