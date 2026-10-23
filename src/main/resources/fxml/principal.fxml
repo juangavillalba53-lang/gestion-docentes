@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ar.edu.ipesmi.docentes.vista.PrincipalController"
+            styleClass="raiz">
+
+    <top>
+        <HBox fx:id="encabezado" styleClass="encabezado" alignment="CENTER_LEFT" spacing="14">
+            <VBox spacing="2">
+                <Label text="Gestión de Docentes y Asignaturas" styleClass="titulo"/>
+                <Label text="IPESMI · Programación III · Carga horaria docente" styleClass="subtitulo"/>
+            </VBox>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Formulario Swing" onAction="#onAbrirSwing" styleClass="boton-claro"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="pestanias" tabClosingPolicy="UNAVAILABLE" styleClass="pestanias">
+            <BorderPane.margin>
+                <Insets top="18" right="18" bottom="18" left="18"/>
+            </BorderPane.margin>
+            <Tab fx:id="tabDocentes" text="Docentes">
+                <fx:include fx:id="vistaDocentes" source="docentes.fxml"/>
+            </Tab>
+            <Tab fx:id="tabAsignaturas" text="Asignaturas">
+                <fx:include fx:id="vistaAsignaturas" source="asignaturas.fxml"/>
+            </Tab>
+            <Tab fx:id="tabAsignaciones" text="Asignaciones">
+                <fx:include fx:id="vistaAsignaciones" source="asignaciones.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ar.edu.ipesmi.docentes.vista.AsignacionesController"
+      spacing="18" styleClass="contenido">
+    <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+
+    <VBox spacing="8" styleClass="tarjeta" prefWidth="320" minWidth="290">
+        <Label text="Asignar docente" styleClass="titulo-tarjeta"/>
+        <Label text="Docente" styleClass="etiqueta"/>
+        <ComboBox fx:id="cmbDocente" promptText="Elegí un docente" maxWidth="Infinity"/>
+        <Label text="Asignatura" styleClass="etiqueta"/>
+        <ComboBox fx:id="cmbAsignatura" promptText="Elegí una asignatura" maxWidth="Infinity"/>
+        <Label text="Horas semanales que dicta" styleClass="etiqueta"/>
+        <Spinner fx:id="spnHoras" editable="true" maxWidth="Infinity"/>
+        <Label text="Notificar por" styleClass="etiqueta"/>
+        <ComboBox fx:id="cmbNotificacion" maxWidth="Infinity"/>
+        <HBox spacing="8" styleClass="fila-botones">
+            <Button minWidth="-Infinity" text="Asignar" onAction="#onAsignar" styleClass="boton-primario" defaultButton="true"/>
+            <Button minWidth="-Infinity" text="Quitar seleccionado" onAction="#onQuitar" styleClass="boton-peligro"/>
+        </HBox>
+        <Label fx:id="lblMensaje" wrapText="true" styleClass="mensaje"/>
+        <Separator/>
+        <Label text="Última notificación enviada" styleClass="etiqueta"/>
+        <Label fx:id="lblNotificacion" wrapText="true" styleClass="notificacion"/>
+    </VBox>
+
+    <VBox spacing="10" styleClass="tarjeta" HBox.hgrow="ALWAYS">
+        <Label text="Asignaturas y docentes asignados" styleClass="titulo-tarjeta"/>
+        <TreeView fx:id="arbolAsignaturas" VBox.vgrow="ALWAYS"/>
+    </VBox>
+</HBox>

@@ -1,0 +1,240 @@
+.root {
+    -color-primario: #1e40af;
+    -color-primario-hover: #1d4ed8;
+    -color-fondo: #f1f5f9;
+    -color-tarjeta: #ffffff;
+    -color-borde: #e2e8f0;
+    -color-texto: #0f172a;
+    -color-texto-suave: #64748b;
+    -color-ok: #15803d;
+    -color-error: #b91c1c;
+
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-texto;
+}
+
+.raiz {
+    -fx-background-color: -color-fondo;
+}
+
+.encabezado {
+    -fx-background-color: linear-gradient(to right, #1e3a8a, #2563eb);
+    -fx-padding: 16 24 16 24;
+}
+
+.titulo {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.subtitulo {
+    -fx-font-size: 12px;
+    -fx-text-fill: #c7d2fe;
+}
+
+.pestanias {
+    -fx-background-color: -color-tarjeta;
+    -fx-background-radius: 10;
+}
+
+.pestanias .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.pestanias .tab {
+    -fx-background-color: transparent;
+    -fx-padding: 8 18 8 18;
+    -fx-background-insets: 0;
+}
+
+.pestanias .tab .tab-label {
+    -fx-text-fill: -color-texto-suave;
+    -fx-font-weight: bold;
+}
+
+.pestanias .tab:selected {
+    -fx-border-color: transparent transparent -color-primario transparent;
+    -fx-border-width: 0 0 3 0;
+}
+
+.pestanias .tab:selected .tab-label {
+    -fx-text-fill: -color-primario;
+}
+
+.pestanias .tab:focused .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+.contenido {
+    -fx-background-color: -color-fondo;
+}
+
+.tarjeta {
+    -fx-background-color: -color-tarjeta;
+    -fx-background-radius: 10;
+    -fx-border-color: -color-borde;
+    -fx-border-radius: 10;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 12, 0, 0, 3);
+}
+
+.titulo-tarjeta {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 4 0;
+}
+
+.etiqueta {
+    -fx-text-fill: -color-texto-suave;
+    -fx-font-size: 12px;
+    -fx-padding: 4 0 0 0;
+}
+
+.text-field, .combo-box, .spinner {
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6;
+    -fx-padding: 4 6 4 6;
+}
+
+.text-field:focused, .combo-box:focused, .spinner:focused {
+    -fx-border-color: -color-primario;
+}
+
+.spinner .text-field {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.fila-botones {
+    -fx-padding: 10 0 0 0;
+}
+
+.button {
+    -fx-background-radius: 6;
+    -fx-font-weight: bold;
+    -fx-padding: 7 14 7 14;
+    -fx-cursor: hand;
+}
+
+.boton-primario {
+    -fx-background-color: -color-primario;
+    -fx-text-fill: white;
+}
+
+.boton-primario:hover {
+    -fx-background-color: -color-primario-hover;
+}
+
+.boton-secundario {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: -color-texto;
+}
+
+.boton-secundario:hover {
+    -fx-background-color: #cbd5e1;
+}
+
+.boton-peligro {
+    -fx-background-color: #fee2e2;
+    -fx-text-fill: -color-error;
+}
+
+.boton-peligro:hover {
+    -fx-background-color: #fecaca;
+}
+
+.boton-claro {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-radius: 6;
+}
+
+.boton-claro:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.28);
+}
+
+.mensaje {
+    -fx-font-size: 12px;
+    -fx-padding: 6 0 0 0;
+}
+
+.mensaje-ok {
+    -fx-text-fill: -color-ok;
+}
+
+.mensaje-error {
+    -fx-text-fill: -color-error;
+}
+
+.notificacion {
+    -fx-background-color: #eff6ff;
+    -fx-background-radius: 6;
+    -fx-text-fill: #1e3a8a;
+    -fx-padding: 8;
+    -fx-font-size: 12px;
+}
+
+.table-view, .tree-view {
+    -fx-background-color: white;
+    -fx-border-color: -color-borde;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f8fafc;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -color-borde transparent;
+    -fx-padding: 6 0 6 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -color-texto-suave;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-row-cell {
+    -fx-cell-size: 32px;
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f8fafc;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: -color-texto;
+}
+
+.tree-cell {
+    -fx-cell-size: 30px;
+    -fx-background-color: white;
+    -fx-text-fill: -color-texto;
+}
+
+.tree-cell:selected {
+    -fx-background-color: #dbeafe;
+}
+
+.nodo-asignatura {
+    -fx-font-weight: bold;
+}
+
+.nodo-docente {
+    -fx-text-fill: #334155;
+}
+
