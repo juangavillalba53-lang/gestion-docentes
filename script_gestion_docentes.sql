@@ -40,34 +40,26 @@ CREATE TABLE asignaciones (
 );
 
 INSERT INTO docentes (nombre, email, especialidad) VALUES
-    ('Ana Gómez',      'ana@ipesmi.edu.ar',            'Programación'),
-    ('Luis Pérez',     'luis@ipesmi.edu.ar',           'Bases de datos'),
-    ('Marta Benítez',  'marta.benitez@ipesmi.edu.ar',  'Redes'),
-    ('Jorge Fernández','jorge.fernandez@ipesmi.edu.ar','Programación');
+    ('Rodri Zarate',  'Rodri@gmail.com',            'Programacion'),
+    ('Villalba Juan', 'juangavillalba53@gmail.com', 'Base de datos');
 
 INSERT INTO asignaturas (codigo, nombre, horas_semanales) VALUES
-    ('PROG3', 'Programación III',     6),
-    ('BD2',   'Bases de Datos II',    4),
-    ('RED1',  'Redes I',              4),
-    ('ING2',  'Ingeniería de Software II', 4);
+    ('PROG1', 'Programacion 1', 4),
+    ('BDD',   'Base de datos',  4);
 
 INSERT INTO asignaciones (docente_id, asignatura_codigo, horas) VALUES
-    (1, 'PROG3', 4),
-    (2, 'PROG3', 2),
-    (2, 'BD2',   4),
-    (3, 'RED1',  3),
-    (4, 'ING2',  4);
+    (1, 'PROG1', 4),
+    (2, 'BDD',   4);
 
-UPDATE docentes
-   SET especialidad = 'Programación y Testing'
- WHERE email = 'jorge.fernandez@ipesmi.edu.ar';
-
-UPDATE asignaturas SET horas_semanales = 5 WHERE codigo = 'RED1';
-UPDATE asignaciones SET horas = 5 WHERE docente_id = 3 AND asignatura_codigo = 'RED1';
+UPDATE asignaturas
+   SET horas_semanales = 6
+ WHERE codigo = 'BDD';
 
 SELECT id, nombre, email, especialidad
   FROM docentes
  ORDER BY nombre;
+
+SELECT * FROM asignaturas;
 
 SELECT a.codigo, a.nombre AS asignatura, d.nombre AS docente, ag.horas
   FROM asignaturas a
@@ -89,7 +81,3 @@ SELECT a.codigo,
   LEFT JOIN asignaciones ag ON ag.asignatura_codigo = a.codigo
  GROUP BY a.codigo, a.horas_semanales
  ORDER BY a.codigo;
-
-SELECT nombre, email
-  FROM docentes
- WHERE LOWER(especialidad) LIKE LOWER('%programación%');
